@@ -1,3 +1,15 @@
 @PORT=4000
 
-GET http://localhost:{{PORT}}
+GET http://localhost:{{PORT}}/api/workouts
+###
+
+GET http://localhost:{{PORT}}/api/workouts/:id
+###
+
+POST http://localhost:{{PORT}}/api/workouts
+###
+
+DELETE http://localhost:{{PORT}}/api/workouts/:id
+###
+
+PATCH http://localhost:{{PORT}}/api/workouts/:id
