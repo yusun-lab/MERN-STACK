@@ -1,0 +1,12 @@
+# 不上传 node_modules（依赖太大，自动重装即可）
+node_modules/
+
+# 忽略 .env（包含敏感信息如密码、密钥）
+.env
+
+# 忽略日志文件
+*.log
+
+# 忽略系统文件
+.DS_Store
+Thumbs.db
