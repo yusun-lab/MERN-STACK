@@ -1,4 +1,6 @@
-const express = require('express');// const Workout = require('../models/workoutModel'); // Import the workout model
+const express = require('express');
+
+// const Workout = require('../models/workoutModel'); 
 
 const {
   getWorkouts,
