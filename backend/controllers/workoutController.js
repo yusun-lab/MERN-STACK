@@ -40,11 +40,27 @@ const createWorkout = async (req, res) => {
 }
 
 // DELETE a workout
+const deleteWorkout = async (req, res) => {
+  const { id } = req.params;
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(404).json({ error: 'No such workout' }); // If the ID is not valid, send a 404 status code with an error message
+  }
+
+  const workout = await Workout.findOneAndDelete({ _id: id }); // Find the workout by ID and delete it from the database
+
+  if (!workout) {
+    return res.status(404).json({ error: 'No such workout' }); // If no workout is found, send a 404 status code with an error message
+  }
+
+  res.status(200).json(workout); // Send a 200 status code with the deleted workout as a response
+}
 
 // UPDATE a workout
 
 module.exports = {
   getWorkouts, // Export the getWorkouts function to be used in the routes
   getWorkout, // Export the getWorkout function to be used in the routes
-  createWorkout // Export the createWorkout function to be used in the routes
+  createWorkout, // Export the createWorkout function to be used in the routes
+  deleteWorkout, // Export the deleteWorkout function to be used in the routes
 }
