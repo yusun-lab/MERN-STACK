@@ -57,10 +57,28 @@ const deleteWorkout = async (req, res) => {
 }
 
 // UPDATE a workout
+  const updateWorkout = async (req, res) => {
+    const { id } = req.params; // Extract the workout ID from the request parameters
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(404).json({ error: 'No such workout' }); // If the ID is not valid, send a 404 status code with an error message
+    }
+
+    const workout = await Workout.findOneAndUpdate({ _id: id}, {
+      ...req.body // Update the workout with the new data from the request body
+    })
+
+    if (!workout) {
+      return res.status(404).json({ error: 'No such workout' }); // If no workout is found, send a 404 status code with an error message
+    }
+
+    res.status(200).json(workout); // Send a 200 status code with the updated workout as a response
+  }
 
 module.exports = {
   getWorkouts, // Export the getWorkouts function to be used in the routes
   getWorkout, // Export the getWorkout function to be used in the routes
   createWorkout, // Export the createWorkout function to be used in the routes
   deleteWorkout, // Export the deleteWorkout function to be used in the routes
+  updateWorkout // Export the updateWorkout function to be used in the routes
 }
