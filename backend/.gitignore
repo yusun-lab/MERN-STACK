@@ -1,12 +1,12 @@
-# 不上传 node_modules（依赖太大，自动重装即可）
+# Do not upload node_modules (too large, can be reinstalled automatically)
 node_modules/
 
-# 忽略 .env（包含敏感信息如密码、密钥）
+# Ignore .env (contains sensitive information like passwords and keys)
 .env
 
-# 忽略日志文件
+# Ignore log files
 *.log
 
-# 忽略系统文件
+# Ignore system files
 .DS_Store
 Thumbs.db
