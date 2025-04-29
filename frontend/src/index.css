@@ -78,7 +78,7 @@ header a {
 
 /* new workout form */
 label, input {
-  dpblock: block;
+  display: block;
 }
 
 input {
