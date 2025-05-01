@@ -8,7 +8,7 @@ GET http://localhost:{{PORT}}/api/workouts/:id
 ###
 GET http://localhost:{{PORT}}/api/workouts/6804ec3f64af64bf28e15819
 
-###POST 创建一条 workout记录
+###
 POST http://localhost:{{PORT}}/api/workouts
 Content-Type: application/json
 
