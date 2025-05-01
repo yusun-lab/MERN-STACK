@@ -23,11 +23,11 @@ MongoDB (local or cloud instance)
 Installation
 Install dependencies for both frontend and backend:
 # Backend
-cd backend
+cd ./backend
 npm install
 
 # Frontend
-cd ../frontend
+cd ./frontend
 npm install
 
 -----------
